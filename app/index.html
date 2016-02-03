@@ -12,9 +12,9 @@
 
     <section ng-controller="sumCtrl">
 
-        <input ng-model="summand1" type="number" placeholder="First number" />
+        <input ng-model="list.summand1" type="number" placeholder="First number" />
         +
-        <input ng-model="summand2" type="number" placeholder="Second number" />
+        <input ng-model="list.summand2" type="number" placeholder="Second number" />
         =
         <input type="text" readonly="true" value="{{ summarize() }}" />
 

@@ -1,9 +1,13 @@
 angular.module("sumModul", [])
     .controller('sumCtrl', function($scope) {
-        $scope.summand1 = 0;
-        $scope.summand2 = 0;
+        $scope.list = {
+            summand1: '',
+            summand2: ''
+        };
 
-        $scope.summarize = function(){
-            return $scope.summand1 + $scope.summand2;
-        }
+        $scope.summarize = function() {
+            var sumResult = $scope.list.summand1 + $scope.list.summand2;
+            if(isNaN(sumResult)) return;
+            return sumResult;
+        };
     });
