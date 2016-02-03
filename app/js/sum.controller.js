@@ -6,8 +6,7 @@ angular.module("sumModul", [])
         };
 
         $scope.summarize = function() {
-            var sumResult = $scope.list.summand1 + $scope.list.summand2;
-            if(isNaN(sumResult)) return;
+            var sumResult = _.reduce($scope.list, function(memo, num){ return memo + num; }, 0);
             return sumResult;
         };
     });
