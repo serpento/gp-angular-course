@@ -2,14 +2,22 @@
 <html lang="en" ng-app>
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
+  <title>Homework 1</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
 </head>
 <body>
 
-  <p>Nothing here {{'yet' + '!'}}</p>
+    <section>
+
+        <input ng-model="summand1" type="number" placeholder="First number" />
+        +
+        <input ng-model="summand2" type="number" placeholder="Second number" />
+        =
+        <input type="text" readonly="true" value="{{ summand1 + summand2 }}" />
+
+    </section>
 
 </body>
 </html>
