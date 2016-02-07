@@ -7,6 +7,7 @@ angular.module("sumModule", ['ngRoute'])
         };
 
         $scope.setUrl = function() {
+            if (!$scope.list.summand1 || !$scope.list.summand2) return;
             $location.path('/' + $scope.list.summand1 + '/' + $scope.list.summand2);
         }
     })
