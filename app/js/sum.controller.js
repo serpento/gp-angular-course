@@ -17,8 +17,18 @@ angular.module("sumModule", ['ngRoute'])
             scope: { list: '=' },
             template: '<input type="text" readonly="true" value="{{ summarize() }}" />',
             link: function(scope){
-                scope.summarize = function() {
+                function count() {
                     return _.reduce(scope.list, function(memo, num){ return memo + num; }, 0);
+                }
+
+                function formMessage(count){ return "sum is: " + count; }
+                function logMessage(phrase){ console.log(phrase); }
+
+                var logSum = _.compose(logMessage, formMessage);
+
+                scope.summarize = function() {
+                   logSum(count());
+                   return count();
                 }
             }
         };
