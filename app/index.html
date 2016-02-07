@@ -1,24 +1,17 @@
 <!doctype html>
-<html lang="en" ng-app="sumModul">
+<html lang="en" ng-app="sumModule">
 <head>
   <meta charset="utf-8">
   <title>Homework 2</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="js/sum.controller.js"></script>
 </head>
 <body>
 
-    <section ng-controller="sumCtrl">
-
-        <input ng-model="list.summand1" type="number" placeholder="First number" />
-        +
-        <input ng-model="list.summand2" type="number" placeholder="Second number" />
-        =
-        <la-sum list="list"></la-sum>
-
-    </section>
+    <ng-view></ng-view>
 
 </body>
 </html>

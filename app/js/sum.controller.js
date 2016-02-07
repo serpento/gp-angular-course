@@ -1,8 +1,9 @@
-angular.module("sumModul", [])
-    .controller('sumCtrl', function($scope) {
+angular.module("sumModule", ['ngRoute'])
+
+    .controller('sumCtrl', function($scope, $routeParams) {
         $scope.list = {
-            summand1: '',
-            summand2: ''
+            summand1: parseInt($routeParams.summand1) || '',
+            summand2: parseInt($routeParams.summand2) || ''
         };
     })
 
@@ -18,4 +19,20 @@ angular.module("sumModul", [])
             }
         };
 
-    });
+    })
+
+    .config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'partials/sum.html',
+                    controller: 'sumCtrl'
+                })
+                .when('/:summand1/:summand2', {
+                    templateUrl: 'partials/sum.html',
+                    controller: 'sumCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        }])
